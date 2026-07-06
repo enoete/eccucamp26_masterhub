@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kittivisianwood AI Studio — Camp 2026 Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0A1628;--navy2:#112240;--coral:#E8573A;--teal:#00C9B1;
+  --gold:#F0A500;--cream:#F5F0E8;--cream2:#EDE8DF;--white:#FFFFFF;
+  --gray:#8892A4;--light:#D1D9E6;--purple:#7B5EA7;--green:#2ECC71;
+  --font-display:'Bebas Neue',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'Space Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--navy);color:var(--cream);overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:2px}
+
+/* ── SIDE NAV ── */
+.sidenav{
+  position:fixed;left:0;top:0;height:100vh;width:200px;
+  background:var(--navy2);border-right:1px solid rgba(0,201,177,0.15);
+  z-index:100;display:flex;flex-direction:column;padding:32px 0;
+}
+.sidenav-logo{padding:0 20px 24px;border-bottom:1px solid rgba(0,201,177,0.15);margin-bottom:16px}
+.sidenav-logo .studio{font-family:var(--font-display);font-size:13px;letter-spacing:2px;color:var(--teal);line-height:1.3}
+.sidenav-logo .year{font-size:11px;color:var(--gray);margin-top:4px}
+.nav-item{
+  display:flex;align-items:center;gap:10px;padding:9px 20px;
+  cursor:pointer;transition:all 0.2s;border-left:3px solid transparent;
+  text-decoration:none;color:var(--gray);font-size:12px;font-weight:500;letter-spacing:0.5px;
+}
+.nav-item:hover,.nav-item.active{color:var(--cream);border-left-color:var(--teal);background:rgba(0,201,177,0.06)}
+.nav-item.active{color:var(--teal)}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
+.nav-group-label{
+  font-family:var(--font-mono);font-size:9px;letter-spacing:2px;
+  color:var(--gray);text-transform:uppercase;padding:12px 20px 4px;opacity:0.6;
+}
+
+/* ── MAIN ── */
+.main{margin-left:200px;min-height:100vh;width:calc(100% - 200px)}
+
+/* ── SECTIONS ── */
+section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:1px solid rgba(255,255,255,0.06)}
+
+/* ── HERO ── */
+#hero{background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:80px 60px;overflow:hidden}
+.hero-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 80% 20%,rgba(0,201,177,0.08) 0%,transparent 60%),radial-gradient(ellipse at 10% 80%,rgba(232,87,58,0.06) 0%,transparent 50%);pointer-events:none}
+.hero-eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:3px;color:var(--teal);text-transform:uppercase;margin-bottom:20px}
+.hero-title{font-family:var(--font-display);font-size:clamp(64px,8vw,110px);line-height:0.9;color:var(--white);margin-bottom:8px}
+.hero-title .accent{color:var(--coral)}
+.hero-sub{font-family:var(--font-display);font-size:clamp(24px,3vw,44px);color:var(--gold);letter-spacing:2px;margin-bottom:40px}
+.hero-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.meta-pill{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:8px 16px;font-size:12px;color:var(--light);font-family:var(--font-mono)}
+.meta-pill span{color:var(--teal);margin-right:6px}
+.mandate-box{max-width:600px;background:rgba(0,201,177,0.06);border-left:3px solid var(--teal);padding:20px 24px;border-radius:0 8px 8px 0}
+.mandate-box p{font-size:15px;line-height:1.7;color:var(--cream);font-style:italic}
+.mandate-box strong{color:var(--teal);font-style:normal}
+
+/* ── SECTION HEADERS ── */
+.section-eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:4px;color:var(--teal);text-transform:uppercase;margin-bottom:12px}
+.section-title{font-family:var(--font-display);font-size:clamp(40px,5vw,68px);line-height:0.95;color:var(--white);margin-bottom:28px}
+.section-intro{max-width:660px;font-size:14px;line-height:1.8;color:var(--light);margin-bottom:40px}
+
+/* ── CURRICULUM HUB ── */
+#curriculum{background:var(--navy)}
+.week-block{margin-bottom:48px}
+.week-header{
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:20px;padding-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.week-label-pill{
+  font-family:var(--font-display);font-size:13px;letter-spacing:2px;
+  padding:6px 16px;border-radius:4px;
+}
+.week-title{font-family:var(--font-display);font-size:28px;color:var(--white)}
+.week-dates{font-family:var(--font-mono);font-size:11px;color:var(--gray);margin-left:auto}
+
+.days-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.day-card{
+  background:var(--navy2);border:1px solid rgba(255,255,255,0.07);
+  border-radius:10px;padding:16px;
+  display:flex;flex-direction:column;gap:10px;
+  transition:border-color 0.2s;
+}
+.day-card:hover{border-color:rgba(0,201,177,0.2)}
+.day-num{font-family:var(--font-display);font-size:32px;line-height:1}
+.day-date{font-family:var(--font-mono);font-size:10px;color:var(--gray);letter-spacing:0.5px}
+.day-title{font-size:12px;font-weight:600;color:var(--white);line-height:1.4;flex:1}
+.day-focus{font-size:11px;color:var(--gray);line-height:1.5}
+.day-badges{display:flex;flex-wrap:wrap;gap:4px}
+.badge{font-size:9px;font-family:var(--font-mono);padding:2px 7px;border-radius:3px;font-weight:700;letter-spacing:0.5px}
+.badge-client{background:rgba(240,165,0,0.2);color:var(--gold)}
+.badge-python{background:rgba(123,94,167,0.2);color:var(--purple)}
+.badge-splat{background:rgba(0,201,177,0.15);color:var(--teal)}
+.badge-wildcard{background:rgba(232,87,58,0.2);color:var(--coral)}
+
+/* Day launch button */
+.day-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--teal);color:var(--navy);
+  font-family:var(--font-mono);font-size:10px;font-weight:700;
+  letter-spacing:1px;padding:7px 12px;border-radius:5px;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:opacity 0.2s;margin-top:4px;width:fit-content;
+}
+.day-btn:hover{opacity:0.85}
+.day-btn.loading{opacity:0.4;pointer-events:none}
+
+/* Week colour themes */
+.w1 .day-num{color:var(--teal)}
+.w1 .week-label-pill{background:rgba(0,201,177,0.15);color:var(--teal)}
+.w2 .day-num{color:var(--coral)}
+.w2 .week-label-pill{background:rgba(232,87,58,0.15);color:var(--coral)}
+.w3 .day-num{color:var(--gold)}
+.w3 .week-label-pill{background:rgba(240,165,0,0.15);color:var(--gold)}
+.wx .day-num{color:var(--gray)}
+.wx .week-label-pill{background:rgba(136,146,164,0.15);color:var(--gray)}
+
+/* Special day cards */
+.day-card.client-day{border-color:rgba(240,165,0,0.25);background:rgba(240,165,0,0.04)}
+.day-card.python-day{border-color:rgba(123,94,167,0.25);background:rgba(123,94,167,0.04)}
+.day-card.wildcard-day{border-color:rgba(232,87,58,0.2);background:rgba(232,87,58,0.03)}
+
+/* Closing days */
+.closing-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+
+/* ── CLIENT BRIEFS ── */
+#briefs{background:var(--navy2)}
+.briefs-tabs{display:flex;gap:4px;margin-bottom:28px;background:rgba(255,255,255,0.04);padding:4px;border-radius:8px;width:fit-content;flex-wrap:wrap}
+.brief-tab{padding:8px 20px;font-size:12px;font-family:var(--font-mono);letter-spacing:0.5px;color:var(--gray);border-radius:6px;cursor:pointer;transition:all 0.2s;border:none;background:none}
+.brief-tab.active,.brief-tab:hover{background:var(--teal);color:var(--navy);font-weight:700}
+
+.brief-panel{display:none}
+.brief-panel.active{display:block}
+
+/* Brief hero */
+.brief-hero{
+  background:var(--navy);border-radius:12px;padding:32px;
+  margin-bottom:20px;border:1px solid rgba(255,255,255,0.07);
+  display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:start;
+}
+.brief-flag{font-size:48px;line-height:1}
+.brief-name{font-family:var(--font-display);font-size:42px;line-height:1;color:var(--white);margin-bottom:6px}
+.brief-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.brief-sector{font-family:var(--font-mono);font-size:10px;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;align-self:start;margin-top:6px}
+.sector-consulting{background:rgba(0,201,177,0.15);color:var(--teal)}
+.sector-telecom{background:rgba(240,165,0,0.15);color:var(--gold)}
+.sector-government{background:rgba(123,94,167,0.15);color:var(--purple)}
+
+.brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.brief-block{background:var(--navy);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:20px 22px}
+.brief-block.full{grid-column:1/-1}
+.brief-block h3{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.brief-block p{font-size:13px;line-height:1.7;color:var(--light)}
+.brief-block ul{list-style:none;padding:0}
+.brief-block li{font-size:13px;color:var(--light);line-height:1.6;padding:4px 0 4px 16px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04)}
+.brief-block li::before{content:'▸';position:absolute;left:0;color:var(--teal);font-size:10px;top:6px}
+.brief-block li:last-child{border-bottom:none}
+
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tag{font-size:10px;font-family:var(--font-mono);padding:3px 8px;border-radius:3px;letter-spacing:0.5px}
+.tag-teal{background:rgba(0,201,177,0.12);color:var(--teal)}
+.tag-gold{background:rgba(240,165,0,0.12);color:var(--gold)}
+.tag-coral{background:rgba(232,87,58,0.12);color:var(--coral)}
+.tag-purple{background:rgba(123,94,167,0.12);color:var(--purple)}
+
+.challenge-box{background:rgba(232,87,58,0.08);border-left:3px solid var(--coral);padding:14px 16px;border-radius:0 6px 6px 0;margin-top:8px}
+.challenge-box .clabel{font-family:var(--font-mono);font-size:9px;color:var(--coral);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.challenge-box p{font-size:13px;color:var(--cream2);line-height:1.6}
+
+/* ── DEMO CLIENT ── */
+#democlient{background:var(--navy)}
+.demo-hero{
+  background:linear-gradient(135deg,rgba(232,87,58,0.15),rgba(240,165,0,0.08));
+  border:1px solid rgba(232,87,58,0.3);border-radius:12px;
+  padding:32px;margin-bottom:24px;
+  display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+}
+.demo-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;color:var(--coral);text-transform:uppercase;margin-bottom:8px}
+.demo-name{font-family:var(--font-display);font-size:52px;color:var(--white);line-height:1;margin-bottom:8px}
+.demo-location{font-family:var(--font-mono);font-size:12px;color:var(--gold);letter-spacing:1px}
+.demo-badge{background:var(--coral);color:var(--white);font-family:var(--font-mono);font-size:10px;font-weight:700;padding:6px 14px;border-radius:4px;letter-spacing:1px;text-transform:uppercase;align-self:start;white-space:nowrap}
+
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.demo-block{background:var(--navy2);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:20px 22px}
+.demo-block.full{grid-column:1/-1}
+.demo-block h3{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--coral);margin-bottom:12px}
+.demo-block p{font-size:13px;line-height:1.7;color:var(--light)}
+.demo-block ul{list-style:none;padding:0}
+.demo-block li{font-size:13px;color:var(--light);line-height:1.6;padding:4px 0 4px 16px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04)}
+.demo-block li::before{content:'▸';position:absolute;left:0;color:var(--coral);font-size:10px;top:6px}
+.demo-block li:last-child{border-bottom:none}
+
+.deliverable-table{width:100%;border-collapse:collapse}
+.deliverable-table th{text-align:left;padding:8px 12px;font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--coral);border-bottom:1px solid rgba(232,87,58,0.3)}
+.deliverable-table td{padding:10px 12px;font-size:13px;color:var(--light);border-bottom:1px solid rgba(255,255,255,0.04)}
+.deliverable-table tr:hover td{background:rgba(255,255,255,0.02)}
+
+/* ── FOOTER ── */
+.doc-footer{background:var(--navy2);padding:28px 60px;border-top:1px solid rgba(0,201,177,0.15);display:flex;justify-content:space-between;align-items:center;margin-left:0}
+.doc-footer p{font-size:11px;color:var(--gray);font-family:var(--font-mono)}
+.doc-footer .teal{color:var(--teal)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .sidenav{display:none}
+  .main{margin-left:0;width:100%}
+  section{padding:32px 16px 48px;min-height:auto}
+  #hero{padding:40px 16px}
+  .hero-title{font-size:52px}
+  .hero-sub{font-size:24px}
+  .hero-meta{flex-direction:column;gap:8px}
+  .meta-pill{width:100%}
+  .days-grid{grid-template-columns:1fr 1fr}
+  .brief-grid{grid-template-columns:1fr}
+  .brief-hero{grid-template-columns:auto 1fr;gap:16px}
+  .brief-sector{display:none}
+  .demo-grid{grid-template-columns:1fr}
+  .demo-hero{grid-template-columns:1fr}
+  .demo-badge{display:none}
+  .closing-grid{grid-template-columns:1fr}
+  .doc-footer{flex-direction:column;gap:8px;text-align:center;padding:20px 16px}
+}
+@media(max-width:480px){
+  .days-grid{grid-template-columns:1fr}
+  .section-title{font-size:32px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── SIDE NAV ── -->
+<nav class="sidenav">
+  <div class="sidenav-logo">
+    <div class="studio">KITTIVISIANWOOD<br>AI STUDIO</div>
+    <div class="year">Multimedia Division · 2026</div>
+  </div>
+  <a class="nav-item active" href="#hero" onclick="setActive(this)"><span class="nav-dot"></span>Home</a>
+  <a class="nav-item" href="#curriculum" onclick="setActive(this)"><span class="nav-dot"></span>Curriculum</a>
+  <a class="nav-item" href="#briefs" onclick="setActive(this)"><span class="nav-dot"></span>Client Briefs</a>
+  <a class="nav-item" href="#democlient" onclick="setActive(this)"><span class="nav-dot"></span>Demo Client</a>
+</nav>
+
+<!-- ── MAIN ── -->
+<div class="main">
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-eyebrow">ECCU Generative AI & Python Summer Camp 2026 — Level 2</div>
+  <div class="hero-title">CINEMATIC<br><span class="accent">EDITION</span></div>
+  <div class="hero-sub">Multimedia Division</div>
+  <div class="hero-meta">
+    <div class="meta-pill"><span>📅</span>Jul 13 – Aug 6, 2026</div>
+    <div class="meta-pill"><span>📆</span>17 Weekdays</div>
+    <div class="meta-pill"><span>👥</span>4 Teams · 4 Real Clients</div>
+    <div class="meta-pill"><span>🎬</span>3-Min Deliverable Per Client</div>
+    <div class="meta-pill"><span>🤝</span>Client Meetings: Days 3, 8 & 13</div>
+  </div>
+  <div class="mandate-box">
+    <p><strong>You are the director. AI is your crew.</strong><br>
+    Four real clients. Four real deliverables. Three weeks to produce a polished multimedia video for an actual Caribbean business or government organisation — using AI tools as your production team and Claude as your prompting collaborator.</p>
+  </div>
+</section>
+
+<!-- ══ CURRICULUM HUB ══ -->
+<section id="curriculum">
+  <div class="section-eyebrow">Section 01 — Camp Curriculum</div>
+  <div class="section-title">THE<br>STUDIO SCHEDULE</div>
+  <p class="section-intro">Click a day to open that day's session. Buttons appear when a session is live. Client meeting days are highlighted in gold.</p>
+
+  <!-- WEEK 1 -->
+  <div class="week-block w1">
+    <div class="week-header">
+      <div class="week-label-pill">WEEK 1</div>
+      <div class="week-title">Discovery & Pre-Production</div>
+      <div class="week-dates">Days 1–5 · Jul 13–17</div>
+    </div>
+    <div class="days-grid">
+
+      <div class="day-card w1" id="card-day1">
+        <div class="day-num">1</div>
+        <div class="day-date">MON · JUL 13</div>
+        <div class="day-title">Welcome to the Studio</div>
+        <div class="day-focus">Director's mandate, reading a brief, brand research, moodboarding</div>
+        <div class="day-badges"><span class="badge badge-splat">SPLAT PREP</span></div>
+        <div id="btn-day1"></div>
+      </div>
+
+      <div class="day-card w1" id="card-day2">
+        <div class="day-num">2</div>
+        <div class="day-date">TUE · JUL 14</div>
+        <div class="day-title">Tools Come Alive</div>
+        <div class="day-focus">OpenArt image gen, Meshy AI characters, Claude as prompting partner</div>
+        <div class="day-badges"></div>
+        <div id="btn-day2"></div>
+      </div>
+
+      <div class="day-card w1 client-day" id="card-day3">
+        <div class="day-num">3</div>
+        <div class="day-date">WED · JUL 15</div>
+        <div class="day-title">Client Meeting 1</div>
+        <div class="day-focus">Discovery meeting, creative brief confirmed and locked</div>
+        <div class="day-badges"><span class="badge badge-client">CLIENT</span></div>
+        <div id="btn-day3"></div>
+      </div>
+
+      <div class="day-card w1" id="card-day4">
+        <div class="day-num">4</div>
+        <div class="day-date">THU · JUL 16</div>
+        <div class="day-title">Storyboard & Visual World</div>
+        <div class="day-focus">6–10 panel storyboard, OpenArt concept images, Luma AI homework briefing</div>
+        <div class="day-badges"><span class="badge badge-splat">SPLAT TONIGHT</span></div>
+        <div id="btn-day4"></div>
+      </div>
+
+      <div class="day-card w1" id="card-day5">
+        <div class="day-num">5</div>
+        <div class="day-date">FRI · JUL 17</div>
+        <div class="day-title">Asset Lock</div>
+        <div class="day-focus">Splat results, Plask.ai motion capture, production bible locked</div>
+        <div class="day-badges"><span class="badge badge-splat">SPLAT DAY</span></div>
+        <div id="btn-day5"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="week-block w2">
+    <div class="week-header">
+      <div class="week-label-pill">WEEK 2</div>
+      <div class="week-title">Production</div>
+      <div class="week-dates">Days 6–10 · Jul 20–24</div>
+    </div>
+    <div class="days-grid">
+
+      <div class="day-card w2" id="card-day6">
+        <div class="day-num">6</div>
+        <div class="day-date">MON · JUL 20</div>
+        <div class="day-title">Score & Voice</div>
+        <div class="day-focus">Suno AI scene music + ElevenLabs narration, panel by panel</div>
+        <div class="day-badges"></div>
+        <div id="btn-day6"></div>
+      </div>
+
+      <div class="day-card w2" id="card-day7">
+        <div class="day-num">7</div>
+        <div class="day-date">TUE · JUL 21</div>
+        <div class="day-title">Sound Design</div>
+        <div class="day-focus">SFX, ambient soundscape, full audio master assembled</div>
+        <div class="day-badges"></div>
+        <div id="btn-day7"></div>
+      </div>
+
+      <div class="day-card w2 client-day" id="card-day8">
+        <div class="day-num">8</div>
+        <div class="day-date">WED · JUL 22</div>
+        <div class="day-title">Client Meeting 2</div>
+        <div class="day-focus">Progress showreel, feedback gathered, adjustments actioned</div>
+        <div class="day-badges"><span class="badge badge-client">CLIENT</span></div>
+        <div id="btn-day8"></div>
+      </div>
+
+      <div class="day-card w2" id="card-day9">
+        <div class="day-num">9</div>
+        <div class="day-date">THU · JUL 23</div>
+        <div class="day-title">OpenArt Video Reveal</div>
+        <div class="day-focus">Image-to-video, start/end frame, Director mode, consistency techniques</div>
+        <div class="day-badges"></div>
+        <div id="btn-day9"></div>
+      </div>
+
+      <div class="day-card w2 python-day" id="card-day10">
+        <div class="day-num">10</div>
+        <div class="day-date">FRI · JUL 24</div>
+        <div class="day-title">Soca Beat Machine + Rough Cut</div>
+        <div class="day-focus">PyDub soca beat, CapCut rough cut assembly, gap analysis</div>
+        <div class="day-badges"><span class="badge badge-python">PYTHON</span></div>
+        <div id="btn-day10"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WEEK 3 -->
+  <div class="week-block w3">
+    <div class="week-header">
+      <div class="week-label-pill">WEEK 3</div>
+      <div class="week-title">Video Production & Refinement</div>
+      <div class="week-dates">Days 11–15 · Jul 27–31</div>
+    </div>
+    <div class="days-grid">
+
+      <div class="day-card w3" id="card-day11">
+        <div class="day-num">11</div>
+        <div class="day-date">MON · JUL 27</div>
+        <div class="day-title">Director Mode Sprint</div>
+        <div class="day-focus">Full film generation in OpenArt Director with client assets</div>
+        <div class="day-badges"></div>
+        <div id="btn-day11"></div>
+      </div>
+
+      <div class="day-card w3" id="card-day12">
+        <div class="day-num">12</div>
+        <div class="day-date">TUE · JUL 28</div>
+        <div class="day-title">Production Sprint + Assembly</div>
+        <div class="day-focus">All scenes generated, CapCut full assembly, first complete cut</div>
+        <div class="day-badges"></div>
+        <div id="btn-day12"></div>
+      </div>
+
+      <div class="day-card w3 client-day" id="card-day13">
+        <div class="day-num">13</div>
+        <div class="day-date">WED · JUL 29</div>
+        <div class="day-title">Client Meeting 3</div>
+        <div class="day-focus">Near-final cut reviewed, last notes, final revision sprint</div>
+        <div class="day-badges"><span class="badge badge-client">CLIENT</span></div>
+        <div id="btn-day13"></div>
+      </div>
+
+      <div class="day-card w3" id="card-day14">
+        <div class="day-num">14</div>
+        <div class="day-date">THU · JUL 30</div>
+        <div class="day-title">Final Polish & Film Lock</div>
+        <div class="day-focus">All revisions actioned, film locked, delivery package prepared</div>
+        <div class="day-badges"></div>
+        <div id="btn-day14"></div>
+      </div>
+
+      <div class="day-card w3" id="card-day15">
+        <div class="day-num">15</div>
+        <div class="day-date">FRI · JUL 31</div>
+        <div class="day-title">Portfolio & Pitch Prep</div>
+        <div class="day-focus">Canva director's commentary, full dress rehearsal</div>
+        <div class="day-badges"></div>
+        <div id="btn-day15"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DAYS 16-17 -->
+  <div class="week-block wx">
+    <div class="week-header">
+      <div class="week-label-pill">DAYS 16–17</div>
+      <div class="week-title">Prep & Celebration</div>
+      <div class="week-dates">Aug 5–6</div>
+    </div>
+    <div class="closing-grid">
+      <div class="day-card wx" id="card-day16">
+        <div class="day-num">16</div>
+        <div class="day-date">WED · AUG 5</div>
+        <div class="day-title">Technical Check & Reflection</div>
+        <div class="day-focus">All files confirmed, peer recognition, reflection circle</div>
+        <div id="btn-day16"></div>
+      </div>
+      <div class="day-card wx wildcard-day" id="card-day17">
+        <div class="day-num">17</div>
+        <div class="day-date">THU · AUG 6</div>
+        <div class="day-title">🎉 Wildcard Day</div>
+        <div class="day-focus">No structure. No deliverables. Pure vibes. Certificates & goodbyes.</div>
+        <div class="day-badges"><span class="badge badge-wildcard">WILDCARD</span></div>
+        <div id="btn-day17"></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══ CLIENT BRIEFS ══ -->
+<section id="briefs">
+  <div class="section-eyebrow">Section 02 — Client Intelligence</div>
+  <div class="section-title">CLIENT<br>BRIEFS</div>
+  <p class="section-intro">Three confirmed clients across the Eastern Caribbean. Study your brief before every client meeting. Know their world better than they expect you to.</p>
+
+  <div class="briefs-tabs">
+    <button class="brief-tab active" onclick="showBrief('outsource',this)">Outsource Dev</button>
+    <button class="brief-tab" onclick="showBrief('digicel',this)">Digicel</button>
+    <button class="brief-tab" onclick="showBrief('ird',this)">Inland Revenue</button>
+  </div>
+
+  <!-- OUTSOURCE -->
+  <div id="brief-outsource" class="brief-panel active">
+    <div class="brief-hero">
+      <div class="brief-flag">🇩🇲</div>
+      <div>
+        <div class="brief-name">Outsource Development Studio</div>
+        <div style="font-size:13px;color:var(--gray);font-family:var(--font-mono);letter-spacing:1px;margin-bottom:10px">ROSEAU, DOMINICA</div>
+        <div class="brief-meta">
+          <span class="tag tag-teal">Consulting</span>
+          <span class="tag tag-gold">Brand Awareness</span>
+          <span class="tag tag-gold">Corporate Profile</span>
+          <span class="tag tag-coral">Social Media</span>
+        </div>
+      </div>
+      <div class="brief-sector sector-consulting">Consulting</div>
+    </div>
+
+    <div class="brief-grid">
+      <div class="brief-block full">
+        <h3>About the Organisation</h3>
+        <p>Outsource Development Studio Inc. is a people-centered consultancy based in Roseau, Dominica, founded on the belief that with the right support, anyone can deliver exceptional service. Starting as a small boutique firm, it has grown into a full-service development centre offering business process outsourcing, recruitment and talent matching, conference facilities, and quarterly professional seminars in partnership with UWI Cave Hill School of Business. With over 15 years of experience, their mission is straightforward: connect businesses with the right people, provide the training and strategic support they need, and ultimately make every client's business better.</p>
+      </div>
+
+      <div class="brief-block">
+        <h3>Services Offered</h3>
+        <ul>
+          <li>Business & Operations Excellence</li>
+          <li>Human Resource Solutions</li>
+          <li>Process Optimization & Management</li>
+          <li>Strategic Business Development</li>
+          <li>Custom Development Projects</li>
+          <li>Corporate Training & Development</li>
+          <li>Logistics & Supply Chain Solutions</li>
+          <li>Recruitment & Workforce Management</li>
+          <li>Employer of Record (EOR) Services</li>
+          <li>Climate Action & Resilience Planning</li>
+          <li>Policy Development</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Current Digital Presence</h3>
+        <ul>
+          <li>Website: outsourcedevelopment.org</li>
+          <li>Facebook: outsourcejobsda</li>
+          <li>Instagram: outsourcedevelopment</li>
+          <li>LinkedIn: outsource-executive-masters</li>
+          <li>WhatsApp, MailChimp</li>
+        </ul>
+        <div class="challenge-box" style="margin-top:16px">
+          <div class="clabel">Communication Challenge</div>
+          <p>Need more international and regional recognition and collaboration.</p>
+        </div>
+      </div>
+
+      <div class="brief-block">
+        <h3>Production Goals</h3>
+        <ul>
+          <li>Brand Awareness</li>
+          <li>Product & Service Promotion</li>
+          <li>Employee Education & Training Content</li>
+          <li>Corporate Profile</li>
+          <li>Social Media Marketing</li>
+          <li>Community Outreach</li>
+          <li>Investor Presentation</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Expected Outcomes</h3>
+        <ul>
+          <li>Increased visibility</li>
+          <li>More customer engagement</li>
+          <li>Increased sales</li>
+          <li>Broader social media reach</li>
+          <li>Improved brand image</li>
+          <li>Better public understanding</li>
+          <li>Educational impact</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Primary Audience</h3>
+        <ul>
+          <li>Private, public & small business professionals</li>
+          <li>All employees</li>
+          <li>Aspiring entrepreneurs</li>
+          <li>Managers, Supervisors, CEOs</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Key Message</h3>
+        <p>Transforming our expertise into life through compelling video and multimedia content.</p>
+      </div>
+
+      <div class="brief-block">
+        <h3>Preferred Production Style</h3>
+        <ul>
+          <li>Live-action video</li>
+          <li>Motion Graphics</li>
+          <li>Documentary / Interview Style</li>
+          <li>Cinematic Storytelling</li>
+          <li>Promotional / Commercial Style</li>
+          <li>Educational / Tutorial Style</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Creative Elements Desired</h3>
+        <ul>
+          <li>Voice Over Narration</li>
+          <li>On Screen Text / Captions</li>
+          <li>Background Music</li>
+          <li>Logo Animation</li>
+          <li>Photography Integration</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Delivery Platforms</h3>
+        <ul>
+          <li>Website</li>
+          <li>Facebook & Instagram</li>
+          <li>TikTok</li>
+          <li>Event Presentation Screen</li>
+          <li>Email</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Available Assets</h3>
+        <ul>
+          <li>Logo Files ✓</li>
+          <li>Brand Guidelines ✓</li>
+          <li>Professional Photos ✓</li>
+          <li>Product Images ✓</li>
+          <li>Social Media Content ✓</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Desired Call to Action</h3>
+        <ul>
+          <li>Visit Website</li>
+          <li>Follow on social media</li>
+          <li>Book a service appointment</li>
+          <li>Contact the business</li>
+          <li>Learn more</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIGICEL -->
+  <div id="brief-digicel" class="brief-panel">
+    <div class="brief-hero">
+      <div class="brief-flag">🇦🇬</div>
+      <div>
+        <div class="brief-name">Digicel Group</div>
+        <div style="font-size:13px;color:var(--gray);font-family:var(--font-mono);letter-spacing:1px;margin-bottom:10px">ANTIGUA & BARBUDA</div>
+        <div class="brief-meta">
+          <span class="tag tag-gold">Telecommunications</span>
+          <span class="tag tag-teal">B2B Corporate</span>
+          <span class="tag tag-coral">Product Explainer</span>
+          <span class="tag tag-purple">TV Delivery</span>
+        </div>
+      </div>
+      <div class="brief-sector sector-telecom">Telecom</div>
+    </div>
+
+    <div class="brief-grid">
+      <div class="brief-block full">
+        <h3>About the Organisation</h3>
+        <p>Digicel provides innovative technology to enrich customers' mobile, home, and business experiences with an unmatched network and services, transforming communities in the Caribbean and beyond. The production request comes from the CEO Department in Antigua & Barbuda.</p>
+      </div>
+
+      <div class="brief-block">
+        <h3>Services Offered</h3>
+        <ul>
+          <li>Mobile and Home Internet (Consumer)</li>
+          <li>Cybersecurity Solutions</li>
+          <li>Managed Services</li>
+          <li>Push to Talk</li>
+          <li>Vehicle Tracking</li>
+          <li>Body Cameras</li>
+          <li>Concierge Services</li>
+          <li>Business Connectivity Solutions</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Current Digital Presence</h3>
+        <ul>
+          <li>Website: digicelgroup.com</li>
+          <li>Instagram: digicelantigua</li>
+          <li>Facebook, WhatsApp</li>
+          <li>TikTok, LinkedIn</li>
+        </ul>
+        <div class="challenge-box" style="margin-top:16px">
+          <div class="clabel">Communication Challenges</div>
+          <p>Digicel is best known for connectivity and mobile. The goal is to drive awareness of corporate services. Getting corporate clients to see Digicel as a one-stop provider for all business solutions.</p>
+        </div>
+      </div>
+
+      <div class="brief-block">
+        <h3>Production Goals</h3>
+        <ul>
+          <li>Product & Service Promotion</li>
+          <li>Corporate Profile</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Expected Outcomes</h3>
+        <ul>
+          <li>Increased visibility</li>
+          <li>Broader social media reach</li>
+          <li>Improved brand image</li>
+          <li>Better public understanding</li>
+          <li>Educational impact</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Primary Audience</h3>
+        <ul>
+          <li>Corporate clients</li>
+          <li>C-suite and decision makers</li>
+          <li>IT managers and procurement leads</li>
+          <li>Internal staff (training & awareness)</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Key Message</h3>
+        <p>New corporate services — particularly Cybersecurity — that position Digicel as a credible, full-service enterprise technology partner, not just a phone company.</p>
+      </div>
+
+      <div class="brief-block">
+        <h3>Preferred Production Style</h3>
+        <ul>
+          <li>Live-action video</li>
+          <li>Documentary / Interview Style</li>
+          <li>Cinematic Storytelling</li>
+          <li>Promotional / Commercial Style</li>
+          <li>Educational / Tutorial Style</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Creative Elements Desired</h3>
+        <ul>
+          <li>Voice Over Narration</li>
+          <li>On Screen Text / Captions</li>
+          <li>Background Music</li>
+          <li>Interviews / Testimonials</li>
+          <li>Product Demonstration</li>
+          <li>Logo Animation</li>
+          <li>Sub-Titles / Multilingual Captions</li>
+          <li>Photography Integration</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Delivery Platforms</h3>
+        <ul>
+          <li>Television broadcast ★</li>
+          <li>Website</li>
+          <li>Facebook & Instagram</li>
+          <li>Event Presentation Screen</li>
+          <li>Internal Company Intranet</li>
+          <li>Email</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Available Assets</h3>
+        <ul>
+          <li>Logo Files ✓</li>
+          <li>Brand Guidelines ✓</li>
+          <li>No existing video footage confirmed</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Desired Call to Action</h3>
+        <ul>
+          <li>Make a purchase</li>
+          <li>Book a service appointment</li>
+          <li>Contact the business</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- IRD -->
+  <div id="brief-ird" class="brief-panel">
+    <div class="brief-hero">
+      <div class="brief-flag">🇬🇩</div>
+      <div>
+        <div class="brief-name">Inland Revenue Division</div>
+        <div style="font-size:13px;color:var(--gray);font-family:var(--font-mono);letter-spacing:1px;margin-bottom:10px">GRENADA · MINISTRY OF FINANCE</div>
+        <div class="brief-meta">
+          <span class="tag tag-purple">Government</span>
+          <span class="tag tag-teal">Public Education</span>
+          <span class="tag tag-teal">Animation</span>
+          <span class="tag tag-gold">Social Reels</span>
+        </div>
+      </div>
+      <div class="brief-sector sector-government">Government</div>
+    </div>
+
+    <div class="brief-grid">
+      <div class="brief-block full">
+        <h3>About the Organisation</h3>
+        <p>The Inland Revenue Division (IRD) is a division within the Ministry of Finance of Grenada. It is responsible for the administration of inland revenue laws and the collection of a wide range of taxes and licences — including personal income tax, corporate tax, general consumption tax, stamp duties, and vehicle/telecommunications licences. It also handles business registration for tax purposes and property valuation and assessment.</p>
+      </div>
+
+      <div class="brief-block">
+        <h3>Services Offered</h3>
+        <ul>
+          <li>Taxpayer Service & Registration</li>
+          <li>Audit & Compliance</li>
+          <li>Refunds Processing</li>
+          <li>Property Valuation & Assessment</li>
+          <li>GTax — online tax filing platform</li>
+          <li>Vehicle, Telecom & Other Licence Collection</li>
+          <li>Property Transfer Tax Assessment</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Current Digital Presence</h3>
+        <ul>
+          <li>Website: ird.gd</li>
+          <li>Facebook: GrenadaInlandRevenue</li>
+          <li>Instagram, WhatsApp, LinkedIn</li>
+        </ul>
+        <div class="challenge-box" style="margin-top:16px">
+          <div class="clabel">Communication Challenges</div>
+          <p>Taxpayers only show greater interest during peak tax season. Reluctance to read internal emails. Limited funding for outreach initiatives.</p>
+        </div>
+      </div>
+
+      <div class="brief-block">
+        <h3>Production Goals</h3>
+        <ul>
+          <li>Brand Awareness</li>
+          <li>Product & Service Promotion</li>
+          <li>Social Media Marketing</li>
+          <li>Community Outreach & Public Awareness</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Expected Outcomes</h3>
+        <ul>
+          <li>Increased visibility</li>
+          <li>Broader social media reach</li>
+          <li>Better public understanding</li>
+          <li>Educational impact</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Primary Audience</h3>
+        <ul>
+          <li>All taxpayers in Grenada</li>
+          <li>Secondary school & tertiary students</li>
+          <li>HR & Finance Managers</li>
+          <li>Ministry staff (internal)</li>
+          <li>The general citizenry</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Key Message</h3>
+        <p>The importance of tax compliance — and how GTax makes the process easier, faster, and more accessible for every Grenadian.</p>
+      </div>
+
+      <div class="brief-block">
+        <h3>Preferred Production Style</h3>
+        <ul>
+          <li>Motion Graphics</li>
+          <li>Animation</li>
+          <li>Documentary / Interview Style</li>
+          <li>Promotional / Commercial Style</li>
+          <li>Educational / Tutorial Style</li>
+          <li>Social Media Reel Format</li>
+          <li>Mixed Media Production</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Creative Elements Desired</h3>
+        <ul>
+          <li>Voice Over Narration</li>
+          <li>Background Music</li>
+          <li>Interviews / Testimonials</li>
+          <li>Infographics / Data Visualisation</li>
+          <li>Photography Integration</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Delivery Platforms</h3>
+        <ul>
+          <li>Website</li>
+          <li>WhatsApp</li>
+          <li>Facebook & Instagram</li>
+          <li>Email</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Available Assets</h3>
+        <ul>
+          <li>Logo Files ✓</li>
+          <li>Brand Guidelines ✓</li>
+          <li>Existing Video Footage ✓</li>
+        </ul>
+      </div>
+
+      <div class="brief-block">
+        <h3>Desired Call to Action</h3>
+        <ul>
+          <li>Visit website</li>
+          <li>Follow on social media</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══ DEMO CLIENT ══ -->
+<section id="democlient">
+  <div class="section-eyebrow">Section 03 — Instructor Demo Client</div>
+  <div class="section-title">THE<br>DEMO BRIEF</div>
+  <p class="section-intro">Your instructor will work through this client live — from brief to finished film — demonstrating every step before you apply it to your own client.</p>
+
+  <div class="demo-hero">
+    <div>
+      <div class="demo-tag">Instructor Demo Client · St. Kitts & Nevis</div>
+      <div class="demo-name">GENZCARWASH</div>
+      <div class="demo-location">📍 St. Kitts & Nevis · Automotive Services / Lifestyle & Entertainment</div>
+    </div>
+    <div class="demo-badge">STARTUP · DEMO ONLY</div>
+  </div>
+
+  <div class="demo-grid">
+    <div class="demo-block full">
+      <h3>About the Business</h3>
+      <p>Genzcarwash is St. Kitts & Nevis's first Gen Z-native car wash experience. This isn't a regular car wash — it's a full lifestyle destination. Part car wash, part lounge, part gaming spot, part accessories shop. They're positioning themselves as the coolest place on the island to spend 30 minutes. They have the services. They have the vibe. Now they need the world to know they exist.</p>
+    </div>
+
+    <div class="demo-block">
+      <h3>Wash Services</h3>
+      <ul>
+        <li>Motorized tunnel wash — fast, efficient, premium clean</li>
+        <li>Hand wash & detailing — extra attention and care</li>
+        <li>Pickup & drop-off service — they come to you</li>
+        <li>Ample on-site parking</li>
+      </ul>
+    </div>
+
+    <div class="demo-block">
+      <h3>The Lounge & Shop</h3>
+      <ul>
+        <li>Indoor waiting area with gaming stations</li>
+        <li>Foosball table</li>
+        <li>Grab-and-go food and drinks</li>
+        <li>Comfortable lounge seating</li>
+        <li>Car accessories available for purchase</li>
+      </ul>
+    </div>
+
+    <div class="demo-block">
+      <h3>Primary Audience</h3>
+      <ul>
+        <li>Gen Z islanders aged 16–28</li>
+        <li>Millennial car owners who value quality & convenience</li>
+        <li>Anyone on the island who owns a vehicle</li>
+      </ul>
+    </div>
+
+    <div class="demo-block">
+      <h3>Available Assets</h3>
+      <ul>
+        <li>No existing logo — to be conceptualised</li>
+        <li>No brand guidelines — colour palette TBD</li>
+        <li>No existing video footage</li>
+        <li>Physical space available for reference</li>
+      </ul>
+    </div>
+
+    <div class="demo-block full">
+      <h3>Deliverables Required</h3>
+      <table class="deliverable-table">
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Length</th>
+            <th>Platform</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Brand Film</td><td>~3 minutes</td><td>YouTube · Website · Event screens</td></tr>
+          <tr><td>Social Reel</td><td>15–30 seconds</td><td>Instagram · TikTok · WhatsApp</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="demo-block full">
+      <h3>What Makes This Demo Client Special</h3>
+      <p>You — the students — are the target audience. You instinctively know what "coolest car wash in St. Kitts" means. You know what makes a Gen Z brand feel real vs. fake. You don't need to research the audience — you are the audience. Watch how your instructor reads this brief, builds the visual world, and makes every creative decision. Then apply the same thinking to your own client.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── FOOTER ── -->
+<div class="doc-footer">
+  <p><span class="teal">Kittivisianwood AI Studio</span> — Multimedia Division · ECCU GenAI & Python Summer Camp 2026 · Level 2</p>
+  <p>For Level 1 Graduates · <span class="teal">Jul 13 – Aug 6, 2026</span></p>
+</div>
+
+</div><!-- end main -->
+
+<script>
+// ── NAV ACTIVE ──
+function setActive(el){
+  document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ── SCROLL SPY ──
+const sections=document.querySelectorAll('section');
+const navItems=document.querySelectorAll('.nav-item');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      navItems.forEach(n=>{
+        n.classList.remove('active');
+        if(n.getAttribute('href')==='#'+id)n.classList.add('active');
+      });
+    }
+  });
+},{threshold:0.3});
+sections.forEach(s=>observer.observe(s));
+
+// ── BRIEF TABS ──
+function showBrief(id,btn){
+  document.querySelectorAll('.brief-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.brief-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('brief-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── JSONBIN DAY BUTTONS ──
+const JSONBIN_ID='6a4b4286da38895dfe335fe9';
+const JSONBIN_URL=`https://api.jsonbin.io/v1/b/${JSONBIN_ID}/latest`;
+
+async function loadDayButtons(){
+  try{
+    const res=await fetch(JSONBIN_URL,{headers:{'X-Access-Key':'$2a$10$placeholder'}});
+    const data=await res.json();
+    const record=data.record||data;
+    for(let i=1;i<=17;i++){
+      const key=`day${i}`;
+      const url=record[key];
+      const container=document.getElementById(`btn-day${i}`);
+      if(container&&url&&url.trim()!==''){
+        const btn=document.createElement('a');
+        btn.href=url;
+        btn.target='_blank';
+        btn.className='day-btn';
+        btn.innerHTML='▶ Open Session';
+        container.appendChild(btn);
+      }
+    }
+  }catch(err){
+    // JSONBin unavailable or key missing — buttons simply don't appear
+    console.log('Day buttons not loaded:',err.message);
+  }
+}
+
+loadDayButtons();
+
+// ── FADE IN ──
+const fadeObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.style.opacity='1';});
+},{threshold:0.1});
+document.querySelectorAll('.day-card,.brief-block,.demo-block').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transition='opacity 0.4s ease';
+  fadeObs.observe(el);
+});
+</script>
+</body>
+</html>
