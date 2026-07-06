@@ -233,6 +233,55 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
   .days-grid{grid-template-columns:1fr}
   .section-title{font-size:32px}
 }
+
+/* ── STUDIO TOOLS ── */
+#tools{background:var(--navy2)}
+.tools-category{margin-bottom:44px}
+.tools-cat-header{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:16px;padding-bottom:10px;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.tools-cat-icon{font-size:20px}
+.tools-cat-name{font-family:var(--font-display);font-size:26px;color:var(--white)}
+.tools-cat-desc{font-size:12px;color:var(--gray);font-family:var(--font-mono);margin-left:auto;letter-spacing:0.5px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.tool-card{
+  background:var(--navy);border:1px solid rgba(255,255,255,0.07);
+  border-radius:10px;padding:16px 18px;
+  text-decoration:none;display:flex;flex-direction:column;gap:8px;
+  transition:all 0.2s;position:relative;overflow:hidden;
+}
+.tool-card:hover{
+  border-color:rgba(0,201,177,0.35);
+  transform:translateY(-2px);
+  background:rgba(0,201,177,0.04);
+}
+.tool-card.paid:hover{border-color:rgba(240,165,0,0.4);background:rgba(240,165,0,0.04)}
+.tool-card.exploratory:hover{border-color:rgba(136,146,164,0.4)}
+.tool-card-top{display:flex;justify-content:space-between;align-items:flex-start}
+.tool-name{font-size:14px;font-weight:700;color:var(--white);line-height:1.2}
+.tool-badge-pill{
+  font-size:9px;font-family:var(--font-mono);font-weight:700;
+  padding:2px 7px;border-radius:3px;letter-spacing:0.5px;
+  flex-shrink:0;margin-left:6px;
+}
+.pill-paid{background:rgba(240,165,0,0.2);color:var(--gold)}
+.pill-free{background:rgba(46,204,113,0.15);color:#2ECC71}
+.pill-freemium{background:rgba(0,201,177,0.15);color:var(--teal)}
+.pill-exploratory{background:rgba(136,146,164,0.15);color:var(--gray)}
+.pill-anchor{background:rgba(240,165,0,0.3);color:var(--gold);border:1px solid rgba(240,165,0,0.5)}
+.tool-desc{font-size:11px;color:var(--gray);line-height:1.5}
+.tool-week{font-size:10px;font-family:var(--font-mono);color:rgba(255,255,255,0.25);letter-spacing:0.5px;margin-top:auto}
+.tool-card::after{
+  content:'↗';position:absolute;bottom:12px;right:14px;
+  font-size:12px;color:rgba(255,255,255,0.15);
+  transition:color 0.2s;
+}
+.tool-card:hover::after{color:var(--teal)}
+.tool-card.paid:hover::after{color:var(--gold)}
+@media(max-width:900px){.tools-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.tools-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -247,6 +296,7 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
   <a class="nav-item" href="#curriculum" onclick="setActive(this)"><span class="nav-dot"></span>Curriculum</a>
   <a class="nav-item" href="#briefs" onclick="setActive(this)"><span class="nav-dot"></span>Client Briefs</a>
   <a class="nav-item" href="#democlient" onclick="setActive(this)"><span class="nav-dot"></span>Demo Client</a>
+  <a class="nav-item" href="#tools" onclick="setActive(this)"><span class="nav-dot"></span>Studio Tools</a>
 </nav>
 
 <!-- ── MAIN ── -->
@@ -1010,6 +1060,240 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
 
 </section>
 
+
+<!-- ══ STUDIO TOOLS ══ -->
+<section id="tools">
+  <div class="section-eyebrow">Section 04 — Studio Arsenal</div>
+  <div class="section-title">STUDIO<br>TOOLS</div>
+  <p class="section-intro">Every tool the studio uses, categorised by role. Click any card to open the platform. 💳 = paid per team. 🆓 = free. ✨ = exploratory / portfolio only.</p>
+
+  <!-- PRIMARY PLATFORM -->
+  <div class="tools-category">
+    <div class="tools-cat-header">
+      <div class="tools-cat-icon">⭐</div>
+      <div class="tools-cat-name">Primary Platform</div>
+      <div class="tools-cat-desc">The anchor — everything feeds here</div>
+    </div>
+    <div class="tools-grid">
+      <a href="https://openart.ai" target="_blank" class="tool-card paid" style="border-color:rgba(240,165,0,0.3);background:rgba(240,165,0,0.04)">
+        <div class="tool-card-top"><div class="tool-name">OpenArt</div><span class="tool-badge-pill pill-anchor">★ ANCHOR</span></div>
+        <div class="tool-desc">Images · video · Director mode · character consistency · lip sync · music · 100+ models</div>
+        <div class="tool-week">$56/team/mo · All weeks</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- AI IMAGE GENERATION -->
+  <div class="tools-category">
+    <div class="tools-cat-header">
+      <div class="tools-cat-icon">🎨</div>
+      <div class="tools-cat-name">AI Image Generation</div>
+      <div class="tools-cat-desc">Concept art · characters · visual world</div>
+    </div>
+    <div class="tools-grid">
+      <a href="https://openart.ai" target="_blank" class="tool-card paid">
+        <div class="tool-card-top"><div class="tool-name">OpenArt Images</div><span class="tool-badge-pill pill-paid">💳 PAID</span></div>
+        <div class="tool-desc">Primary image generation — GPT Image, Nano Banana Pro, Flux and more</div>
+        <div class="tool-week">Included in OpenArt plan · Week 1</div>
+      </a>
+      <a href="https://www.meshy.ai" target="_blank" class="tool-card paid">
+        <div class="tool-card-top"><div class="tool-name">Meshy AI</div><span class="tool-badge-pill pill-paid">💳 PAID</span></div>
+        <div class="tool-desc">Text-to-3D character and asset generation. Informs OpenArt prompting.</div>
+        <div class="tool-week">$20/team/mo · Week 1</div>
+      </a>
+      <a href="https://www.canva.com" target="_blank" class="tool-card">
+        <div class="tool-card-top"><div class="tool-name">Canva</div><span class="tool-badge-pill pill-free">🆓 FREE</span></div>
+        <div class="tool-desc">Moodboards, storyboards, pitch presentations, title cards</div>
+        <div class="tool-week">All weeks</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- AI VIDEO GENERATION -->
+  <div class="tools-category">
+    <div class="tools-cat-header">
+      <div class="tools-cat-icon">🎬</div>
+      <div class="tools-cat-name">AI Video Generation</div>
+      <div class="tools-cat-desc">Film production · scene generation · motion</div>
+    </div>
+    <div class="tools-grid">
+      <a href="https://openart.ai/create/video" target="_blank" class="tool-card paid">
+        <div class="tool-card-top"><div class="tool-name">OpenArt Director</div><span class="tool-badge-pill pill-paid">💳 PAID</span></div>
+        <div class="tool-desc">Conversational film directing — Kling 3.0, Veo 3.1, Sora 2, Seedance 2.0</div>
+        <div class="tool-week">Included in OpenArt plan · Week 3</div>
+      </a>
+      <a href="https://runwayml.com" target="_blank" class="tool-card exploratory">
+        <div class="tool-card-top"><div class="tool-name">Runway ML</div><span class="tool-badge-pill pill-exploratory">✨ ALT</span></div>
+        <div class="tool-desc">Alternative video generation — image-to-video, text-to-video</div>
+        <div class="tool-week">Optional alternative</div>
+      </a>
+      <a href="https://pika.art" target="_blank" class="tool-card exploratory">
+        <div class="tool-card-top"><div class="tool-name">Pika Art</div><span class="tool-badge-pill pill-exploratory">✨ ALT</span></div>
+        <div class="tool-desc">Quick punchy clips — good secondary option for fast inserts</div>
+        <div class="tool-week">Optional alternative</div>
+      </a>
+      <a href="https://kling.kuaishou.com" target="_blank" class="tool-card exploratory">
+        <div class="tool-card-top"><div class="tool-name">Kling AI</div><span class="tool-badge-pill pill-exploratory">✨ ALT</span></div>
+        <div class="tool-desc">Strong motion realism — included inside OpenArt Director</div>
+        <div class="tool-week">Via OpenArt</div>
+      </a>
+      <a href="https://higgsfield.ai" target="_blank" class="tool-card exploratory">
+        <div class="tool-card-top"><div class="tool-name">Higgsfield AI</div><span class="tool-badge-pill pill-exploratory">✨ EXPLORE</span></div>
+        <div class="tool-desc">Cinematic short-form video — 70+ camera presets, lip sync studio</div>
+        <div class="tool-week">Awareness only</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- MUSIC & AUDIO -->
+  <div class="tools-category">
+    <div class="tools-cat-header">
+      <div class="tools-cat-icon">🎵</div>
+      <div class="tools-cat-name">Music & Audio Production</div>
+      <div class="tools-cat-desc">Score · sound design · Caribbean music</div>
+    </div>
+    <div class="tools-grid">
+      <a href="https://suno.com" target="_blank" class="tool-card paid">
+        <div class="tool-card-top"><div class="tool-name">Suno AI</div><span class="tool-badge-pill pill-paid">💳 PAID</span></div>
+        <div class="tool-desc">Primary music education tool — scene-matched Caribbean scoring, 2,500 credits/mo</div>
+        <div class="tool-week">$10/team/mo · Week 2</div>
+      </a>
+      <a href="https://www.udio.com" target="_blank" class="tool-card">
+        <div class="tool-card-top"><div class="tool-name">Udio</div><span class="tool-badge-pill pill-free">🆓 FREE</span></div>
+        <div class="tool-desc">Secondary music generation — generous free tier, different sonic character</div>
+        <div class="tool-week">Week 2</div>
+      </a>
+      <a href="https://flow.google.com" target="_blank" class="tool-card exploratory">
+        <div class="tool-card-top"><div class="tool-name">Google Flow Music</div><span class="tool-badge-pill pill-exploratory">✨ ALT</span></div>
+        <div class="tool-desc">AI music generation powered by Lyria 3 Pro — music videos, stem editing, full songs</div>
+        <div class="tool-week">Alternative to Suno · Week 2</div>
+      </a>
+      <a href="https://freesound.org" target="_blank" class="tool-card">
+        <div class="tool-card-top"><div class="tool-name">Freesound.org</div><span class="tool-badge-pill pill-free">🆓 FREE</span></div>
+        <div class="tool-desc">Caribbean ambient SFX library — ocean, market, carnival, steel pan</div>
+        <div class="tool-week">Week 2 · Sound design</div>
+      </a>
+      <a href="https://colab.research.google.com" target="_blank" class="tool-card">
+        <div class="tool-card-top"><div class="tool-name">Python / PyDub</div><span class="tool-badge-pill pill-free">🆓 FREE</span></div>
+        <div class="tool-desc">Soca beat machine — build Caribbean music with code via Google Colab</div>
+        <div class="tool-week">Day 10 · Python session</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- VOICE & NARRATION -->
+  <div class="tools-category">
+    <div class="tools-cat-header">
+      <div class="tools-cat-icon">🎙️</div>
+      <div class="tools-cat-name">Voice & Narration</div>
+      <div class="tools-cat-desc">Caribbean dialect · lip sync · voice cloning</div>
+    </div>
+    <div class="tools-grid">
+      <a href="https://elevenlabs.io" target="_blank" class="tool-card paid">
+        <div class="tool-card-top"><div class="tool-name">ElevenLabs</div><span class="tool-badge-pill pill-paid">💳 PAID</span></div>
+        <div class="tool-desc">Caribbean dialect narration — voice cloning, emotional control, lip-sync ready audio</div>
+        <div class="tool-week">$5/team/mo · Week 2</div>
+      </a>
+      <a href="https://murf.ai" target="_blank" class="tool-card exploratory">
+        <div class="tool-card-top"><div class="tool-name">Murf AI</div><span class="tool-badge-pill pill-exploratory">✨ ALT</span></div>
+        <div class="tool-desc">Alternative voiceover — controlled pacing, good for narration style</div>
+        <div class="tool-week">Optional alternative</div>
+      </a>
+      <a href="https://play.ht" target="_blank" class="tool-card exploratory">
+        <div class="tool-card-top"><div class="tool-name">PlayHT</div><span class="tool-badge-pill pill-exploratory">✨ ALT</span></div>
+        <div class="tool-desc">Alternative voice — handles accents and dialect well</div>
+        <div class="tool-week">Optional alternative</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 3D & SPATIAL -->
+  <div class="tools-category">
+    <div class="tools-cat-header">
+      <div class="tools-cat-icon">🌐</div>
+      <div class="tools-cat-name">3D & Spatial</div>
+      <div class="tools-cat-desc">Characters · environments · real-world capture</div>
+    </div>
+    <div class="tools-grid">
+      <a href="https://www.meshy.ai" target="_blank" class="tool-card paid">
+        <div class="tool-card-top"><div class="tool-name">Meshy AI</div><span class="tool-badge-pill pill-paid">💳 PAID</span></div>
+        <div class="tool-desc">Text-to-3D model generation — characters, props, cultural assets</div>
+        <div class="tool-week">$20/team/mo · Week 1</div>
+      </a>
+      <a href="https://lumalabs.ai" target="_blank" class="tool-card">
+        <div class="tool-card-top"><div class="tool-name">Luma AI</div><span class="tool-badge-pill pill-free">🆓 FREE</span></div>
+        <div class="tool-desc">Gaussian splat capture — turn phone footage into photorealistic 3D environments</div>
+        <div class="tool-week">Day 4 homework · Exploratory</div>
+      </a>
+      <a href="https://plask.ai" target="_blank" class="tool-card exploratory">
+        <div class="tool-card-top"><div class="tool-name">Plask.ai</div><span class="tool-badge-pill pill-exploratory">✨ EXPLORE</span></div>
+        <div class="tool-desc">Browser-based motion capture from video — your body as animation data</div>
+        <div class="tool-week">Day 5 · Exploratory</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- VIDEO EDITING & ASSEMBLY -->
+  <div class="tools-category">
+    <div class="tools-cat-header">
+      <div class="tools-cat-icon">✂️</div>
+      <div class="tools-cat-name">Video Editing & Assembly</div>
+      <div class="tools-cat-desc">Final cut · polish · export</div>
+    </div>
+    <div class="tools-grid">
+      <a href="https://www.capcut.com" target="_blank" class="tool-card paid">
+        <div class="tool-card-top"><div class="tool-name">CapCut</div><span class="tool-badge-pill pill-paid">💳 PAID</span></div>
+        <div class="tool-desc">Final film assembly, colour grade, transitions — watermark-free client export</div>
+        <div class="tool-week">$8/team/mo · Weeks 2–3</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- PYTHON -->
+  <div class="tools-category">
+    <div class="tools-cat-header">
+      <div class="tools-cat-icon">🐍</div>
+      <div class="tools-cat-name">Python — Cool Points</div>
+      <div class="tools-cat-desc">One session per week · fun · creative coding</div>
+    </div>
+    <div class="tools-grid">
+      <a href="https://colab.research.google.com" target="_blank" class="tool-card">
+        <div class="tool-card-top"><div class="tool-name">Google Colab</div><span class="tool-badge-pill pill-free">🆓 FREE</span></div>
+        <div class="tool-desc">Browser-based Python — no install needed. Home for all three Python sessions.</div>
+        <div class="tool-week">Days 3–4, 7, 10</div>
+      </a>
+
+      <a href="https://github.com/jiaaro/pydub" target="_blank" class="tool-card">
+        <div class="tool-card-top"><div class="tool-name">PyDub (Python)</div><span class="tool-badge-pill pill-free">🆓 FREE</span></div>
+        <div class="tool-desc">Audio manipulation library — soca beat machine session</div>
+        <div class="tool-week">Week 2 · Python #2</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- RESEARCH & PROMPTING -->
+  <div class="tools-category">
+    <div class="tools-cat-header">
+      <div class="tools-cat-icon">🧠</div>
+      <div class="tools-cat-name">Research & Prompting</div>
+      <div class="tools-cat-desc">Claude as your creative collaborator</div>
+    </div>
+    <div class="tools-grid">
+      <a href="https://claude.ai" target="_blank" class="tool-card">
+        <div class="tool-card-top"><div class="tool-name">Claude</div><span class="tool-badge-pill pill-free">🆓 FREE</span></div>
+        <div class="tool-desc">Your prompting partner — describe your client's world and get production-ready prompts back for every tool</div>
+        <div class="tool-week">All weeks · Every session</div>
+      </a>
+      <a href="https://www.canva.com" target="_blank" class="tool-card">
+        <div class="tool-card-top"><div class="tool-name">Canva</div><span class="tool-badge-pill pill-free">🆓 FREE</span></div>
+        <div class="tool-desc">Moodboards, storyboards, pitch decks, presentations, title cards</div>
+        <div class="tool-week">All weeks</div>
+      </a>
+    </div>
+  </div>
+
+
+</section>
 <!-- ── FOOTER ── -->
 <div class="doc-footer">
   <p><span class="teal">Kittivisianwood AI Studio</span> — Multimedia Division · ECCU GenAI & Python Summer Camp 2026 · Level 2</p>
@@ -1084,7 +1368,7 @@ loadDayButtons();
 const fadeObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.style.opacity='1';});
 },{threshold:0.1});
-document.querySelectorAll('.day-card,.brief-block,.demo-block').forEach(el=>{
+document.querySelectorAll('.day-card,.brief-block,.demo-block,.tool-card').forEach(el=>{
   el.style.opacity='0';
   el.style.transition='opacity 0.4s ease';
   fadeObs.observe(el);
