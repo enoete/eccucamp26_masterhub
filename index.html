@@ -1051,13 +1051,14 @@ function showBrief(id,btn){
 
 // ── JSONBIN DAY BUTTONS ──
 const JSONBIN_ID='6a4b4286da38895dfe335fe9';
-const JSONBIN_URL=`https://api.jsonbin.io/v1/b/${JSONBIN_ID}/latest`;
+const JSONBIN_URL=`https://api.jsonbin.io/v3/b/${JSONBIN_ID}/latest`;
 
 async function loadDayButtons(){
   try{
-    const res=await fetch(JSONBIN_URL,{headers:{'X-Access-Key':'$2a$10$placeholder'}});
+    const res=await fetch(JSONBIN_URL,{headers:{'X-Master-Key':'$2a$10$kVXbv0Mz2wBXrCxdtsBE..VZdNDVFmjSbNizIJeAgzAl7JRdJh2Jm','X-Bin-Meta':false}});
+    if(!res.ok) throw new Error('JSONBin not available');
     const data=await res.json();
-    const record=data.record||data;
+    const record=data.record||data.record||data;
     for(let i=1;i<=17;i++){
       const key=`day${i}`;
       const url=record[key];
