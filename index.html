@@ -234,6 +234,18 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
   .section-title{font-size:32px}
 }
 
+/* ── FACILITATOR BUTTON ── */
+.fac-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 14px;background:rgba(240,165,0,0.12);
+  border:1px solid rgba(240,165,0,0.35);border-radius:6px;
+  color:var(--gold);font-family:var(--font-mono);font-size:11px;
+  font-weight:700;letter-spacing:0.5px;text-decoration:none;
+  transition:all 0.2s;margin-top:6px;
+}
+.fac-btn:hover{background:rgba(240,165,0,0.2);border-color:var(--gold)}
+.day-btn-wrap{display:flex;flex-direction:column;gap:4px}
+
 /* ── STYLE REFERENCES ── */
 .styles-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px}
 .style-card{background:var(--navy);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;transition:border-color 0.2s}
@@ -254,6 +266,20 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
 .style-ref-link-title{font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px}
 .style-ref-link-why{font-size:11px;color:var(--gray);line-height:1.4}
 .style-ref-link-arrow{font-size:11px;color:var(--teal);margin-top:4px;display:block}
+
+/* ── STUDIO TEAMS ── */
+.teams-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px}
+.team-card{background:var(--navy);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)}
+.team-card-header{padding:18px 22px 14px}
+.team-card-num{font-family:var(--font-display);font-size:52px;line-height:1;opacity:0.1;margin-bottom:-6px}
+.team-card-name{font-family:var(--font-display);font-size:26px;color:var(--white);line-height:1;margin-bottom:4px}
+.team-card-client{font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+.team-card-flag{font-size:22px;margin-bottom:8px}
+.team-roster{padding:0 22px 20px;display:flex;flex-direction:column;gap:2px}
+.team-member{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;border-radius:6px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)}
+.team-member:hover{background:rgba(255,255,255,0.06)}
+.team-member-name{font-size:13px;color:var(--white);font-weight:600}
+.team-member-country{font-family:var(--font-mono);font-size:10px;color:var(--gray);letter-spacing:0.5px}
 </style>
 </head>
 <body>
@@ -269,6 +295,7 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
   <a class="nav-item" href="#briefs" onclick="setActive(this)"><span class="nav-dot"></span>Client Briefs</a>
   <a class="nav-item" href="#democlient" onclick="setActive(this)"><span class="nav-dot"></span>Demo Client</a>
   <a class="nav-item" href="#styles" onclick="setActive(this)"><span class="nav-dot"></span>Style References</a>
+  <a class="nav-item" href="#teams" onclick="setActive(this)"><span class="nav-dot"></span>Studio Teams</a>
 </nav>
 
 <!-- ── MAIN ── -->
@@ -1680,19 +1707,33 @@ async function loadDayButtons(){
     const record=data.record||data.record||data;
     for(let i=1;i<=17;i++){
       const key=`day${i}`;
+      const facKey=`day${i}_facilitator`;
       const url=record[key];
+      const facUrl=record[facKey];
       const container=document.getElementById(`btn-day${i}`);
-      if(container&&url&&url.trim()!==''){
-        const btn=document.createElement('a');
-        btn.href=url;
-        btn.target='_blank';
-        btn.className='day-btn';
-        btn.innerHTML='▶ Open Session';
-        container.appendChild(btn);
+      if(container){
+        const wrap=document.createElement('div');
+        wrap.className='day-btn-wrap';
+        if(url&&url.trim()!==''){
+          const btn=document.createElement('a');
+          btn.href=url;
+          btn.target='_blank';
+          btn.className='day-btn';
+          btn.innerHTML='▶ Open Session';
+          wrap.appendChild(btn);
+        }
+        if(facUrl&&facUrl.trim()!==''){
+          const fBtn=document.createElement('a');
+          fBtn.href=facUrl;
+          fBtn.target='_blank';
+          fBtn.className='fac-btn';
+          fBtn.innerHTML='🔒 Facilitator Guide';
+          wrap.appendChild(fBtn);
+        }
+        if(wrap.children.length>0) container.appendChild(wrap);
       }
     }
   }catch(err){
-    // JSONBin unavailable or key missing — buttons simply don't appear
     console.log('Day buttons not loaded:',err.message);
   }
 }
@@ -1709,5 +1750,271 @@ document.querySelectorAll('.day-card,.brief-block,.demo-block').forEach(el=>{
   fadeObs.observe(el);
 });
 </script>
+
+<section id="teams">
+  <div class="section-eyebrow">Section 06 — Studio Roster</div>
+  <div class="section-title">STUDIO<br>TEAMS</div>
+  <p class="section-intro">Five teams. Five real clients. Each team owns their brief from Day 1 through the Premiere. Find your team, know your client, represent your studio.</p>
+
+  <div class="teams-grid">
+
+    <div class="team-card">
+      <div class="team-card-header" style="border-left:4px solid #00C9B1">
+        <div class="team-card-num">01</div>
+        <div class="team-card-flag">🇰🇳</div>
+        <div class="team-card-name" style="color:#00C9B1">ECCB</div>
+        <div class="team-card-client" style="color:#00C9B1">ECCB / Credit Bureau</div>
+      </div>
+      <div class="team-roster">
+        <div class="team-member">
+          <span class="team-member-name">Jahari Francis</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Chamiya Ambrose</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Chaeli Francis</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Layla Hodge</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Gabriel Duggins</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Fara Manning</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Jethzar Abdiel Stokes</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Arianna Blanchard</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Kairisa Heyliger</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Nathan Blackman</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-card-header" style="border-left:4px solid #E8573A">
+        <div class="team-card-num">02</div>
+        <div class="team-card-flag">🇰🇳</div>
+        <div class="team-card-name" style="color:#E8573A">SCASPA</div>
+        <div class="team-card-client" style="color:#E8573A">SCASPA</div>
+      </div>
+      <div class="team-roster">
+        <div class="team-member">
+          <span class="team-member-name">Che-Ncue Sutton-Elliot</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Rein Charles</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Khalil Thomas-Bradshaw</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Kai Wattley</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Naz Martin</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Shiloh Mills</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Tejhyuani Charles Willett</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Jaylen Richards</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Kevin Thomas</span>
+          <span class="team-member-country">St. Vincent & Grenadines</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Jael Jeffers</span>
+          <span class="team-member-country">St. Kitts & Nevis</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-card-header" style="border-left:4px solid #2ECC71">
+        <div class="team-card-num">03</div>
+        <div class="team-card-flag">🇩🇲</div>
+        <div class="team-card-name" style="color:#2ECC71">OUTSOURCE</div>
+        <div class="team-card-client" style="color:#2ECC71">Outsource Development Studio</div>
+      </div>
+      <div class="team-roster">
+        <div class="team-member">
+          <span class="team-member-name">Kamian Joseph</span>
+          <span class="team-member-country">Dominica</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Aiden Guiste</span>
+          <span class="team-member-country">Dominica</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Minran Isaac</span>
+          <span class="team-member-country">Dominica</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Daniel King</span>
+          <span class="team-member-country">St. Vincent & Grenadines</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Uranus Besse</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Kennique Roberts</span>
+          <span class="team-member-country">St. Vincent & Grenadines</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Dominic Ragguette</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Joshua John</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Nevaeh Eugene</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Viaje Frederick</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-card-header" style="border-left:4px solid #F0A500">
+        <div class="team-card-num">04</div>
+        <div class="team-card-flag">🇦🇬</div>
+        <div class="team-card-name" style="color:#F0A500">DIGICEL</div>
+        <div class="team-card-client" style="color:#F0A500">Digicel Group</div>
+      </div>
+      <div class="team-roster">
+        <div class="team-member">
+          <span class="team-member-name">Jer'valle & Joey Joseph</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Celeste Thomas</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Joshua Bhagwandin</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Neyo Bailey</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Mateo Barnwell</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Kuranyi Goodwin</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Allick-zander Lovelace</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Irena Leon</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Cavon Barnwell</span>
+          <span class="team-member-country">Antigua & Barbuda</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Mosiah McDonald</span>
+          <span class="team-member-country">St. Vincent & Grenadines</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-card-header" style="border-left:4px solid #7B5EA7">
+        <div class="team-card-num">05</div>
+        <div class="team-card-flag">🇬🇩</div>
+        <div class="team-card-name" style="color:#7B5EA7">IRD</div>
+        <div class="team-card-client" style="color:#7B5EA7">Inland Revenue Division</div>
+      </div>
+      <div class="team-roster">
+        <div class="team-member">
+          <span class="team-member-name">Quincy Prince</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Hariram Arun</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Jayden George</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Noah Isidore</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Sychar Aubert</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Hailey Daniel</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Xander Brown</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Jaden St. Rose</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Ethan Augustin</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+        <div class="team-member">
+          <span class="team-member-name">Clearisa Talbert</span>
+          <span class="team-member-country">Saint Lucia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
 </body>
 </html>
