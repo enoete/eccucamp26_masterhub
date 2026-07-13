@@ -233,6 +233,27 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
   .days-grid{grid-template-columns:1fr}
   .section-title{font-size:32px}
 }
+
+/* ── STYLE REFERENCES ── */
+.styles-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px}
+.style-card{background:var(--navy);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;transition:border-color 0.2s}
+.style-card:hover{border-color:rgba(0,201,177,0.3)}
+.style-card-header{padding:22px 24px 0}
+.style-card-num{font-family:var(--font-display);font-size:48px;line-height:1;opacity:0.12;margin-bottom:-8px}
+.style-card-title{font-family:var(--font-display);font-size:28px;color:var(--white);line-height:1;margin-bottom:8px}
+.style-card-label{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.style-card-desc{font-size:13px;color:var(--light);line-height:1.7;padding:0 24px}
+.style-card-clients{display:flex;flex-wrap:wrap;gap:6px;padding:14px 24px}
+.style-client-tag{font-family:var(--font-mono);font-size:10px;padding:3px 10px;border-radius:20px;letter-spacing:0.5px}
+.style-card-refs{padding:16px 24px 22px;border-top:1px solid rgba(255,255,255,0.06);margin-top:8px;display:flex;flex-direction:column;gap:8px}
+.style-ref-label{font-family:var(--font-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:4px}
+.style-ref-link{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.06);transition:all 0.15s}
+.style-ref-link:hover{background:rgba(0,201,177,0.08);border-color:rgba(0,201,177,0.3)}
+.style-ref-link-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.style-ref-link-body{}
+.style-ref-link-title{font-size:12px;font-weight:600;color:var(--white);margin-bottom:2px}
+.style-ref-link-why{font-size:11px;color:var(--gray);line-height:1.4}
+.style-ref-link-arrow{font-size:11px;color:var(--teal);margin-top:4px;display:block}
 </style>
 </head>
 <body>
@@ -247,6 +268,7 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
   <a class="nav-item" href="#curriculum" onclick="setActive(this)"><span class="nav-dot"></span>Curriculum</a>
   <a class="nav-item" href="#briefs" onclick="setActive(this)"><span class="nav-dot"></span>Client Briefs</a>
   <a class="nav-item" href="#democlient" onclick="setActive(this)"><span class="nav-dot"></span>Demo Client</a>
+  <a class="nav-item" href="#styles" onclick="setActive(this)"><span class="nav-dot"></span>Style References</a>
 </nav>
 
 <!-- ── MAIN ── -->
@@ -1378,6 +1400,231 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
       <h3>What Makes This Demo Client Special</h3>
       <p>You — the students — are the target audience. You instinctively know what "coolest car wash in St. Kitts" means. You know what makes a Gen Z brand feel real vs. fake. You don't need to research the audience — you are the audience. Watch how your instructor reads this brief, builds the visual world, and makes every creative decision. Then apply the same thinking to your own client.</p>
     </div>
+  </div>
+
+</section>
+
+
+<section id="styles">
+  <div class="section-eyebrow">Section 05 — Visual Language</div>
+  <div class="section-title">STYLE<br>REFERENCES</div>
+  <p class="section-intro">Six production styles that fit your clients' briefs. Use this section in client meetings — show the examples, let them react, confirm their visual direction before production begins.</p>
+
+  <div class="styles-grid">
+
+    <!-- ── STYLE 1 — MOTION GRAPHICS ── -->
+    <div class="style-card">
+      <div class="style-card-header">
+        <div class="style-card-num">01</div>
+        <div class="style-card-title">Motion Graphics<br>& Infographic</div>
+        <div class="style-card-label" style="color:var(--teal)">Data · Process · Service explanation</div>
+      </div>
+      <div class="style-card-desc">Text, shapes, icons, and data brought to life through animation. No characters, no live footage. Clean, modern, and brand-forward. Best for explaining abstract concepts, processes, and statistics visually.</div>
+      <div class="style-card-clients">
+        <span class="style-client-tag" style="background:rgba(46,204,113,0.12);color:#2ECC71">ECCB</span>
+        <span class="style-client-tag" style="background:rgba(240,165,0,0.12);color:var(--gold)">Digicel</span>
+        <span class="style-client-tag" style="background:rgba(123,94,167,0.12);color:#7B5EA7">IRD</span>
+        <span class="style-client-tag" style="background:rgba(52,152,219,0.12);color:#3498DB">SCASPA</span>
+      </div>
+      <div class="style-card-refs">
+        <div class="style-ref-label">Reference Examples</div>
+        <a class="style-ref-link" href="https://taxfoundation.org/taxedu/videos/" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">TaxEDU — Animated Explainer Videos</div>
+            <div class="style-ref-link-why">Clean motion graphics for public education. Perfect reference for IRD and ECCB — shows how abstract concepts become visual stories.</div>
+            <span class="style-ref-link-arrow">↗ taxfoundation.org</span>
+          </div>
+        </a>
+        <a class="style-ref-link" href="https://www.mainspringagency.com/blog/video-production-16/best-corporate-video-examples-of-2026-60" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">Best Corporate Videos 2026 — CrowdSec Example</div>
+            <div class="style-ref-link-why">The CrowdSec cybersecurity animation uses clean motion graphics to explain a complex invisible product. Show this to Digicel — almost identical brief.</div>
+            <span class="style-ref-link-arrow">↗ mainspringagency.com</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── STYLE 2 — 2D CHARACTER ANIMATION ── -->
+    <div class="style-card">
+      <div class="style-card-header">
+        <div class="style-card-num">02</div>
+        <div class="style-card-title">2D Character<br>Animation</div>
+        <div class="style-card-label" style="color:var(--coral)">Approachable · Educational · Warm</div>
+      </div>
+      <div class="style-card-desc">Illustrated characters that move through a story. Flat design or more expressive cartoon style. Feels accessible, warm, and human. Best for reaching broad audiences with complex or sensitive subjects.</div>
+      <div class="style-card-clients">
+        <span class="style-client-tag" style="background:rgba(46,204,113,0.12);color:#2ECC71">ECCB</span>
+        <span class="style-client-tag" style="background:rgba(123,94,167,0.12);color:#7B5EA7">IRD</span>
+      </div>
+      <div class="style-card-refs">
+        <div class="style-ref-label">Reference Examples</div>
+        <a class="style-ref-link" href="https://www.punchystudio.com.au/blog/best-animated-video-examples-for-government/" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">Punchy Studio — Government Animation Examples</div>
+            <div class="style-ref-link-why">11 real government animation videos covering compliance, public safety, and civic education. Shows IRD and ECCB teams what character-driven public messaging looks like at a professional level.</div>
+            <span class="style-ref-link-arrow">↗ punchystudio.com.au</span>
+          </div>
+        </a>
+        <a class="style-ref-link" href="https://www.columnfivemedia.com/strong-marketing-b2b-video-examples/" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">Column Five — WorkingFrom_ Character Animation</div>
+            <div class="style-ref-link-why">The WorkingFrom_ example uses character animation to make a B2B product feel playful and personable. Shows the range of 2D character style — from cute to sophisticated.</div>
+            <span class="style-ref-link-arrow">↗ columnfivemedia.com</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── STYLE 3 — 3D ANIMATION / CGI ── -->
+    <div class="style-card">
+      <div class="style-card-header">
+        <div class="style-card-num">03</div>
+        <div class="style-card-title">3D Animation<br>& CGI</div>
+        <div class="style-card-label" style="color:var(--purple)">Premium · Cinematic · Immersive</div>
+      </div>
+      <div class="style-card-desc">Three-dimensional rendered environments, objects, or characters. High production feel. Can be realistic or stylised. Best for visualising invisible services, large-scale infrastructure, or premium brand positioning.</div>
+      <div class="style-card-clients">
+        <span class="style-client-tag" style="background:rgba(52,152,219,0.12);color:#3498DB">SCASPA</span>
+        <span class="style-client-tag" style="background:rgba(240,165,0,0.12);color:var(--gold)">Digicel</span>
+        <span class="style-client-tag" style="background:rgba(46,204,113,0.12);color:#2ECC71">ECCB</span>
+      </div>
+      <div class="style-card-refs">
+        <div class="style-ref-label">Reference Examples</div>
+        <a class="style-ref-link" href="https://www.b2w.tv/blog/best-cyber-security-videos" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">B2W — Best Cybersecurity Videos</div>
+            <div class="style-ref-link-why">Includes Panda Security's 3D graphics and Accedian's isometric 3D animation. Both show how 3D makes invisible tech services feel tangible and premium. Show Digicel team.</div>
+            <span class="style-ref-link-arrow">↗ b2w.tv</span>
+          </div>
+        </a>
+        <a class="style-ref-link" href="https://vimeo.com/bestoftheyear/best-branded-videos" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">Vimeo Best Branded 2024 — Jindal Steel Film</div>
+            <div class="style-ref-link-why">The Jindal Steel & Power brand film uses cinematic 3D-enhanced visuals to celebrate infrastructure and national pride. Near-perfect reference for SCASPA's airport and seaport world.</div>
+            <span class="style-ref-link-arrow">↗ vimeo.com</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── STYLE 4 — CINEMATIC LIVE ACTION ── -->
+    <div class="style-card">
+      <div class="style-card-header">
+        <div class="style-card-num">04</div>
+        <div class="style-card-title">Cinematic<br>Live Action</div>
+        <div class="style-card-label" style="color:var(--gold)">Real · Human · High production value</div>
+      </div>
+      <div class="style-card-desc">Real people, real locations, high production value. Commercial or documentary style. Feels authentic, grounded, and emotionally resonant. Best for people-centered brands and organisations with a physical world worth capturing.</div>
+      <div class="style-card-clients">
+        <span class="style-client-tag" style="background:rgba(0,201,177,0.12);color:var(--teal)">Outsource Dev</span>
+        <span class="style-client-tag" style="background:rgba(52,152,219,0.12);color:#3498DB">SCASPA</span>
+        <span class="style-client-tag" style="background:rgba(240,165,0,0.12);color:var(--gold)">Digicel</span>
+      </div>
+      <div class="style-card-refs">
+        <div class="style-ref-label">Reference Examples</div>
+        <a class="style-ref-link" href="https://levitatemedia.com/learn/brand-story-videos-10-great-examples" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">Levitate — Brand Story Video Examples</div>
+            <div class="style-ref-link-why">People-centered cinematic brand storytelling. The IKEA and Airbnb examples show how live action creates emotional connection. Ideal reference for Outsource Dev's human-first brand story.</div>
+            <span class="style-ref-link-arrow">↗ levitatemedia.com</span>
+          </div>
+        </a>
+        <a class="style-ref-link" href="https://vimeopro.com/screencraftmedia/brand-films-examples" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">Screencraftmedia — Brand Film Portfolio</div>
+            <div class="style-ref-link-why">Cinematic documentary-style corporate brand films. Shows SCASPA and Outsource Dev teams what high-production live action looks like — real environments, authoritative voiceover, pride of place.</div>
+            <span class="style-ref-link-arrow">↗ vimeopro.com</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── STYLE 5 — MIXED MEDIA ── -->
+    <div class="style-card">
+      <div class="style-card-header">
+        <div class="style-card-num">05</div>
+        <div class="style-card-title">Mixed<br>Media</div>
+        <div class="style-card-label" style="color:var(--green)">Flexible · Complex · Layered</div>
+      </div>
+      <div class="style-card-desc">Combines two or more styles in one film — live action with motion graphics overlaid, documentary interviews with animated data cutaways, real footage with 3D elements integrated. The most versatile approach for complex briefs.</div>
+      <div class="style-card-clients">
+        <span class="style-client-tag" style="background:rgba(46,204,113,0.12);color:#2ECC71">ECCB</span>
+        <span class="style-client-tag" style="background:rgba(0,201,177,0.12);color:var(--teal)">Outsource Dev</span>
+        <span class="style-client-tag" style="background:rgba(240,165,0,0.12);color:var(--gold)">Digicel</span>
+        <span class="style-client-tag" style="background:rgba(123,94,167,0.12);color:#7B5EA7">IRD</span>
+        <span class="style-client-tag" style="background:rgba(52,152,219,0.12);color:#3498DB">SCASPA</span>
+      </div>
+      <div class="style-card-refs">
+        <div class="style-ref-label">Reference Examples</div>
+        <a class="style-ref-link" href="https://boldcontentvideo.com/2024/07/19/top-10-brand-video-examples-2024/" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">Bold Content — Top 10 Brand Videos 2024</div>
+            <div class="style-ref-link-why">The Colt Technologies film is a standout mixed media example — live action interviews combined with motion graphics and cinematic b-roll. Almost exactly Digicel's brief. Also strong for SCASPA.</div>
+            <span class="style-ref-link-arrow">↗ boldcontentvideo.com</span>
+          </div>
+        </a>
+        <a class="style-ref-link" href="https://www.superside.com/blog/corporate-video-storytelling-examples" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">Superside — Corporate Video Storytelling Examples</div>
+            <div class="style-ref-link-why">Multiple mixed media examples including the Thomson Reuters CoCounsel film — documentary interviews plus motion graphics. Shows all five clients how live and animated elements combine seamlessly.</div>
+            <span class="style-ref-link-arrow">↗ superside.com</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── STYLE 6 — SOCIAL MEDIA REEL ── -->
+    <div class="style-card">
+      <div class="style-card-header">
+        <div class="style-card-num">06</div>
+        <div class="style-card-title">Social Media<br>Reel</div>
+        <div class="style-card-label" style="color:var(--coral)">Vertical · Fast · Platform-native</div>
+      </div>
+      <div class="style-card-desc">Vertical or square format. Fast cuts. Text overlays. Hook within the first 2 seconds. Designed specifically for Instagram, TikTok, and WhatsApp — not a shortened version of the main film, but a standalone creative challenge.</div>
+      <div class="style-card-clients">
+        <span class="style-client-tag" style="background:rgba(46,204,113,0.12);color:#2ECC71">ECCB</span>
+        <span class="style-client-tag" style="background:rgba(0,201,177,0.12);color:var(--teal)">Outsource Dev</span>
+        <span class="style-client-tag" style="background:rgba(240,165,0,0.12);color:var(--gold)">Digicel</span>
+        <span class="style-client-tag" style="background:rgba(123,94,167,0.12);color:#7B5EA7">IRD</span>
+        <span class="style-client-tag" style="background:rgba(52,152,219,0.12);color:#3498DB">SCASPA</span>
+      </div>
+      <div class="style-card-refs">
+        <div class="style-ref-label">Reference Examples</div>
+        <a class="style-ref-link" href="https://motionvillee.com/10-great-corporate-videos-that-prove-b2b-storytelling-drives-real-business-results/" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">Motionvillee — B2B Storytelling Examples</div>
+            <div class="style-ref-link-why">Includes short-form social content alongside longer brand films. Shows how the same brand story adapts between formats — the full film vs the reel are different creative challenges.</div>
+            <span class="style-ref-link-arrow">↗ motionvillee.com</span>
+          </div>
+        </a>
+        <a class="style-ref-link" href="https://www.columnfivemedia.com/strong-marketing-b2b-video-examples/" target="_blank">
+          <div class="style-ref-link-icon">▶️</div>
+          <div class="style-ref-link-body">
+            <div class="style-ref-link-title">Column Five — B2B Video Examples</div>
+            <div class="style-ref-link-why">The SurveyMonkey motion graphics example and Dialpad VoiceAI spot show social-native energy — punchy, no VO, fast cuts, brand personality in the first frame. Great reel format reference for all five clients.</div>
+            <span class="style-ref-link-arrow">↗ columnfivemedia.com</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- end styles-grid -->
+
+  <div style="margin-top:40px;padding:24px;background:rgba(0,201,177,0.06);border:1px solid rgba(0,201,177,0.2);border-radius:12px;max-width:760px">
+    <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:10px">How to use this in a client meeting</div>
+    <div style="font-size:14px;color:var(--light);line-height:1.8">Show your client the reference links for the styles that match their brief. Let them watch 60–90 seconds of each. Ask: <em style="color:var(--cream)">"Does this feel like your brand — or does it feel like something you want to avoid?"</em> Their reaction tells you more than any brief question. A client who says "I love this but warmer" has just given you a creative direction.</div>
   </div>
 
 </section>
