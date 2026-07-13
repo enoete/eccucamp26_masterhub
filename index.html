@@ -268,14 +268,14 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
 .style-ref-link-arrow{font-size:11px;color:var(--teal);margin-top:4px;display:block}
 
 /* ── STUDIO TEAMS ── */
-.teams-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px}
-.team-card{background:var(--navy);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)}
+.teams-grid{display:flex;flex-direction:column;gap:20px;max-width:860px;width:100%}
+.team-card{background:var(--navy);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);width:100%}
 .team-card-header{padding:18px 22px 14px}
 .team-card-num{font-family:var(--font-display);font-size:52px;line-height:1;opacity:0.1;margin-bottom:-6px}
 .team-card-name{font-family:var(--font-display);font-size:26px;color:var(--white);line-height:1;margin-bottom:4px}
 .team-card-client{font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
 .team-card-flag{font-size:22px;margin-bottom:8px}
-.team-roster{padding:0 22px 20px;display:flex;flex-direction:column;gap:2px}
+.team-roster{padding:0 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .team-member{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;border-radius:6px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)}
 .team-member:hover{background:rgba(255,255,255,0.06)}
 .team-member-name{font-size:13px;color:var(--white);font-weight:600}
