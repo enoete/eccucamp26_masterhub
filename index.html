@@ -281,6 +281,40 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
 .team-member:hover{background:rgba(255,255,255,0.07)}
 .team-member-name{font-size:12px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:8px}
 .team-member-country{font-family:var(--font-mono);font-size:10px;color:var(--gray);letter-spacing:0.3px;flex-shrink:0;white-space:nowrap}
+
+/* ── QUIZ HERO CARD ── */
+.quiz-hero-card{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  background:linear-gradient(135deg,rgba(240,165,0,.12),rgba(240,165,0,.04));
+  border:1px solid rgba(240,165,0,.35);
+  border-radius:12px;padding:20px 28px;
+  max-width:720px;margin-bottom:24px;
+}
+.quiz-hero-eyebrow{font-family:var(--font-mono);font-size:9px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.quiz-hero-title{font-family:var(--font-display);font-size:28px;color:var(--white);
+  margin-bottom:6px;letter-spacing:1px}
+.quiz-hero-desc{font-size:12px;color:var(--light);line-height:1.5;max-width:320px}
+.quiz-hero-links{display:flex;flex-direction:column;gap:10px;flex-shrink:0}
+.quiz-link-btn{
+  display:block;text-align:center;text-decoration:none;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:1px;
+  padding:10px 22px;border-radius:7px;transition:all .2s;white-space:nowrap;
+}
+.quiz-link-btn.primary{
+  background:var(--gold);color:#1a1a1a;font-weight:700;
+  box-shadow:0 2px 12px rgba(240,165,0,.4);
+}
+.quiz-link-btn.primary:hover{background:#FFC107;transform:translateY(-1px);
+  box-shadow:0 4px 18px rgba(240,165,0,.6)}
+.quiz-link-btn.secondary{
+  background:rgba(240,165,0,.1);color:var(--gold);
+  border:1px solid rgba(240,165,0,.3);
+}
+.quiz-link-btn.secondary:hover{background:rgba(240,165,0,.18);border-color:var(--gold)}
+.nav-quiz{border-left-color:var(--gold) !important;color:var(--gold) !important}
+.nav-quiz:hover{background:rgba(240,165,0,.08) !important;color:var(--cream) !important}
+
 </style>
 </head>
 <body>
@@ -297,6 +331,7 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
   <a class="nav-item" href="#democlient" onclick="setActive(this)"><span class="nav-dot"></span>Demo Client</a>
   <a class="nav-item" href="#styles" onclick="setActive(this)"><span class="nav-dot"></span>Style References</a>
   <a class="nav-item" href="#teams" onclick="setActive(this)"><span class="nav-dot"></span>Studio Teams</a>
+  <a class="nav-item nav-quiz" href="https://eccul2test.tekii.org/quiz" target="_blank" onclick=""><span class="nav-dot" style="background:var(--gold)"></span>🏆 The Test</a>
 </nav>
 
 <!-- ── MAIN ── -->
@@ -314,6 +349,18 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
     <div class="meta-pill"><span>👥</span>5 Teams · 5 Real Clients</div>
     <div class="meta-pill"><span>🎬</span>3-Min Deliverable Per Client</div>
     <div class="meta-pill"><span>🤝</span>Client Meetings: Days 3, 8 & 13</div>
+  </div>
+
+  <div class="quiz-hero-card">
+    <div class="quiz-hero-left">
+      <div class="quiz-hero-eyebrow">Friday · Day 10 · 10:00 AM</div>
+      <div class="quiz-hero-title">🏆 THE TEST IS LIVE</div>
+      <div class="quiz-hero-desc">60 questions · 30 minutes · live leaderboard · points for speed and knowledge</div>
+    </div>
+    <div class="quiz-hero-links">
+      <a href="https://eccul2test.tekii.org/quiz" target="_blank" class="quiz-link-btn primary">Take the Quiz →</a>
+      <a href="https://eccul2test.tekii.org/leaderboard" target="_blank" class="quiz-link-btn secondary">Live Leaderboard ↗</a>
+    </div>
   </div>
   <div class="mandate-box">
     <p><strong>You are the director. AI is your crew.</strong><br>
@@ -367,7 +414,7 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
         <div class="day-num">4</div>
         <div class="day-date">THU · JUL 16</div>
         <div class="day-title">Storyboard & Visual World</div>
-        <div class="day-focus">Applying Days 1–3 skills to the actual client project — production blueprint built</div>
+        <div class="day-focus">Storyboard workshop — Milanote boards, shot types, panel construction, production bible</div>
         <div class="day-badges"><span class="badge badge-splat">SPLAT HOMEWORK</span></div>
         <div id="btn-day4"></div>
       </div>
