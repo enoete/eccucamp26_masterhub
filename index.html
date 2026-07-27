@@ -315,6 +315,25 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
 .nav-quiz{border-left-color:var(--gold) !important;color:var(--gold) !important}
 .nav-quiz:hover{background:rgba(240,165,0,.08) !important;color:var(--cream) !important}
 
+
+/* ── QUICK ACCESS CARDS ── */
+.quick-cards{display:flex;gap:14px;flex-wrap:wrap;max-width:720px;margin-bottom:20px}
+.quick-card{
+  display:flex;align-items:center;gap:12px;
+  text-decoration:none;
+  border-radius:9px;padding:14px 20px;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:1px;
+  transition:all .2s;flex:1;min-width:200px;
+}
+.quick-card:hover{transform:translateY(-2px)}
+.quick-card-icon{font-size:22px;flex-shrink:0}
+.quick-card-text strong{display:block;font-size:13px;margin-bottom:2px;font-family:var(--font-display);letter-spacing:1px}
+.quick-card-text span{font-size:10px;opacity:.7;letter-spacing:1px;text-transform:uppercase}
+.qc-jokes{background:rgba(232,87,58,.1);border:1px solid rgba(232,87,58,.3);color:var(--coral)}
+.qc-jokes:hover{background:rgba(232,87,58,.2);border-color:var(--coral)}
+.qc-pitch{background:rgba(123,94,167,.1);border:1px solid rgba(123,94,167,.3);color:#B39DDB}
+.qc-pitch:hover{background:rgba(123,94,167,.2);border-color:#B39DDB}
+
 </style>
 </head>
 <body>
@@ -331,6 +350,8 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
   <a class="nav-item" href="#democlient" onclick="setActive(this)"><span class="nav-dot"></span>Demo Client</a>
   <a class="nav-item" href="#styles" onclick="setActive(this)"><span class="nav-dot"></span>Style References</a>
   <a class="nav-item" href="#teams" onclick="setActive(this)"><span class="nav-dot"></span>Studio Teams</a>
+  <a class="nav-item" href="https://enoete.github.io/eccucamp_26_jokes/" target="_blank" onclick="" style="color:var(--coral);border-left-color:var(--coral)"><span class="nav-dot" style="background:var(--coral)"></span>😐 Dad Jokes</a>
+  <a class="nav-item" href="https://enoete.github.io/eccucamp_26_agencypitch/" target="_blank" onclick="" style="color:#B39DDB;border-left-color:#B39DDB"><span class="nav-dot" style="background:#B39DDB"></span>🎬 Agency Pitch</a>
   <a class="nav-item nav-quiz" href="https://eccul2test.tekii.org/quiz" target="_blank" onclick=""><span class="nav-dot" style="background:var(--gold)"></span>🏆 The Test</a>
 </nav>
 
@@ -351,6 +372,22 @@ section{min-height:100vh;padding:60px 60px 80px;position:relative;border-bottom:
     <div class="meta-pill"><span>🤝</span>Client Meetings: Days 3, 8 & 13</div>
   </div>
 
+  <div class="quick-cards">
+    <a href="https://enoete.github.io/eccucamp_26_jokes/" target="_blank" class="quick-card qc-jokes">
+      <div class="quick-card-icon">😐</div>
+      <div class="quick-card-text">
+        <strong>IF YOU LAUGH YOU'RE OUT</strong>
+        <span>Icebreaker · Dad Jokes · 16 rounds</span>
+      </div>
+    </a>
+    <a href="https://enoete.github.io/eccucamp_26_agencypitch/" target="_blank" class="quick-card qc-pitch">
+      <div class="quick-card-icon">🎬</div>
+      <div class="quick-card-text">
+        <strong>THE AGENCY PITCH</strong>
+        <span>Cross-Pollination · Level 1 × Level 2</span>
+      </div>
+    </a>
+  </div>
   <div class="quiz-hero-card">
     <div class="quiz-hero-left">
       <div class="quiz-hero-eyebrow">Friday · Day 10 · 10:00 AM</div>
