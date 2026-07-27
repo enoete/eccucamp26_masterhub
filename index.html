@@ -2168,7 +2168,7 @@ async function loadDayButtons(){
     const res=await fetch(JSONBIN_URL,{headers:{'X-Master-Key':'$2a$10$YdbExlb2BaD00NW/hIKjcOXwJR/0mx3D/.vsZ62yW6gUFVqNlUQyO','X-Bin-Meta':false}});
     if(!res.ok) throw new Error('JSONBin not available');
     const data=await res.json();
-    const record=data.record||data.record||data;
+    const record=data.record||data;
     for(let i=1;i<=17;i++){
       const key=`day${i}`;
       const facKey=`day${i}_facilitator`;
@@ -2180,7 +2180,7 @@ async function loadDayButtons(){
         wrap.className='day-btn-wrap';
         if(url&&url.trim()!==''){
           const btn=document.createElement('a');
-          btn.href=url;
+          btn.href=url.trim();
           btn.target='_blank';
           btn.className='day-btn';
           btn.innerHTML='▶ Open Session';
@@ -2188,7 +2188,7 @@ async function loadDayButtons(){
         }
         if(facUrl&&facUrl.trim()!==''){
           const fBtn=document.createElement('a');
-          fBtn.href=facUrl;
+          fBtn.href=facUrl.trim();
           fBtn.target='_blank';
           fBtn.className='fac-btn';
           fBtn.innerHTML='🔒 Facilitator Guide';
